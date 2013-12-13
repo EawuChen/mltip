@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cstring>
 
 
 using namespace std;
@@ -10,8 +9,7 @@ struct  trieNode
 {
     trieNode<size> *child[size];
     bool isStr;
-    int count;
-    trieNode() :isStr(false), count(0)
+    trieNode() :isStr(false)
     {
 	for(int i = 0; i < size; i++) child[i] = NULL;
     }
@@ -69,7 +67,6 @@ void trieTree<size>::Insert(const char *s)
 	s++;
     }
     p->isStr = true;
-    p->count += 1;
 }
 
 template<int size>
@@ -119,12 +116,6 @@ int main(void)
 
     trieTree<26> t;
     t.Insert("he");
-    t.Insert("hero");
-    t.Insert("hero");
-    t.Insert("hero");
-    t.Insert("hero");
-    t.Insert("hero");
-    t.Insert("hero");
     t.Insert("hero");
     t.Insert("heroman");
 
